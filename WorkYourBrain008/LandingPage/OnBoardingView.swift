@@ -10,57 +10,28 @@ import SwiftUI
 import UIKit
 
 struct OnBoardingView: View {
-    
-    //@ObservedObject var navToSignIn: NavToSignIn
-    //@ObservedObject var dataRouter2: SignInDataRouter
-   // @ObservedObject var viewRouter: ViewRouter
     @State private var isGetStartedButton = false
-   // @ObservedObject var activity: activityOfNavLink
-    
-    let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue:
-      247.0/255.0, opacity: 1.0)
+    let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue: 247.0/255.0, opacity: 1.0)
     @State var isActivubdf = false
     @State var curAct = false
     @State var rootState  = false
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    /*
     var subViews = [
-        UIHostingController(rootView: Subview(imageString: "")),
-        UIHostingController(rootView: Subview(imageString: "")),
-        UIHostingController(rootView: Subview(imageString: ""))
-                ]
-    
-    var emailHandlingViews = [EmailVerificationHandle(), ]
-    */
+        UIHostingController(rootView: OnBoardingView_Subviews(imageString: "")),
+        UIHostingController(rootView: OnBoardingView_Subviews(imageString: "")),
+        UIHostingController(rootView: OnBoardingView_Subviews(imageString: ""))]
     var titles = ["Have a question? Ask it.", "Conquer personal hindrances", "Create a peaceful mind"]
     var captions =  ["Post your question and work with your peers to find a solution.", "Meditating helps you dealing with anxiety and other psychic problems", "Regular medidation sessions creates a peaceful inner mind"]
-    
     var buttonText = ["Next", "Next", "Get Started"]
     @State var currentPageIndex = 0
-    func settingFinalState() -> Bool{
-        var finalDes = false
-        if self.activity.isActive == true{
-            finalDes = true
-            
-        }else if self.activity.isActive == false{
-            finalDes = false
-        }
-        return finalDes
-    }
     @State var isActive: Bool = false
     
     var body: some View {
     NavigationView{
         VStack(alignment: .leading) {
-           /*
-            NavigationLink(destination: Email_SignIn(activity: activityOfNavLink(), viewRouter: ViewRouter(), dataRouter: DataRouter()), isActive: self.$curAct) {
-             EmptyView()
-           }.hidden()
-            */
         PageViewController(currentPageIndex: $currentPageIndex, viewControllers: subViews)
             .frame(height: 400)
-            
           Group {
             Text(titles[currentPageIndex])
                 .font(.system(size: 22))
@@ -112,8 +83,8 @@ struct OnBoardingView: View {
                    }
             }else if currentPageIndex == 2 {
                 
-                NavigationLink(destination: SchoolCode_SignUp(viewRouter: ViewRouter(), dataRouter: DataRouter(),navToSignIn: NavToSignIn(), rootIsActive: self.$isActive), isActive: self.$isActive
-                ){
+                NavigationLink(destination: SchoolCode_SignUp(/*viewRouter: ViewRouter(), dataRouter: DataRouter(),navToSignIn: NavToSignIn(), rootIsActive: self.$isActive), isActive: self.$isActive
+                */)){
                     Text("Get Started")
                     .font(.system(size: 12))
                     .fontWeight(.semibold)
@@ -125,84 +96,18 @@ struct OnBoardingView: View {
             .isDetailLink(false)
             }
         }
-                    .padding(.leading)
-                    .padding(.trailing)
+            .padding(.leading)
+            .padding(.trailing)
             }
         .onAppear(){
         }
         .navigationBarItems(trailing:
-            NavigationLink(destination: Email_SignIn(activity: activityOfNavLink(), viewRouter: ViewRouter(), dataRouter: DataRouter())){
+            NavigationLink(destination: Email_SignIn(/*activity: activityOfNavLink(), viewRouter: ViewRouter(), dataRouter: DataRouter())*/)){
                 Text("Sign In")
                     .font(.system(size: 20))
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
             })
         }
-    }
-}
-struct activeView: View {
-    var body : some View{
-        Text("active")
-           
-    }
-}
-
-struct inactiveView: View {
-    var body : some View{
-        Text("inactive")
-    }
-}
-struct NextButton1: View {
-    let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue:
-      247.0/255.0, opacity: 1.0)
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
-    var body: some View{
-        Button(action:{
-            print("Go To Next Slide View")
-        }){
-            Text("Next")
-            .font(.system(size: 12))
-            .fontWeight(.semibold)
-            .foregroundColor(.white)
-            .frame(width: 150 , height: 45)
-            .background(blueAccents)
-            .cornerRadius(10)
-            }
-        }
-    }
-struct NextButton2: View {
-let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue:
-  247.0/255.0, opacity: 1.0)
-let screenWidth = UIScreen.main.bounds.width
-let screenHeight = UIScreen.main.bounds.height
-var body: some View{
-    Button(action:{
-        print("Go To Next Slide View")
-    }){
-        Text("Next")
-        .font(.system(size: 12))
-        .fontWeight(.semibold)
-        .foregroundColor(.white)
-        .frame(width: 150 , height: 45)
-        .background(blueAccents)
-        .cornerRadius(10)
-        }
-    }
-}
-
-struct ButtonContent2: View {
-    let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue:
-      247.0/255.0, opacity: 1.0)
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
-    var body: some View{
-        Text("Get Started")
-            .font(.system(size: 12))
-            .fontWeight(.semibold)
-            .foregroundColor(.white)
-            .frame(width: 150 , height: 45)
-            .background(blueAccents)
-            .cornerRadius(10)
     }
 }
