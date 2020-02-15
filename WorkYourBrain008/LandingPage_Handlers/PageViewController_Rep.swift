@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-struct PageViewController: UIViewControllerRepresentable {
+struct PageViewController_Rep: UIViewControllerRepresentable {
     @Binding var currentPageIndex: Int
     var viewControllers: [UIViewController]
     
@@ -30,8 +30,8 @@ struct PageViewController: UIViewControllerRepresentable {
     }
     
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-        var parent: PageViewController
-        init(_ pageViewController: PageViewController){
+        var parent: PageViewController_Rep
+        init(_ pageViewController: PageViewController_Rep){
             self.parent = pageViewController
         }
         

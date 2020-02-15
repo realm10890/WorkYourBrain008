@@ -29,9 +29,12 @@
 		8F3B1A8A23EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8923EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift */; };
 		8F3B1A8C23EAABC900B8506D /* SchoolCodeTextField_Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8B23EAABC900B8506D /* SchoolCodeTextField_Rep.swift */; };
 		8F3B1A8E23EAAC0700B8506D /* TextFieldUnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */; };
+		8F3D0CD223F877200019AF69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */; };
+		914311AB886D79C69E053EA3 /* Pods_WorkYourBrain008.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkYourBrain008.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3B1A4C23EA971700B8506D /* WorkYourBrain008.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkYourBrain008.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3B1A4F23EA971700B8506D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F3B1A5123EA971700B8506D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,9 @@
 		8F3B1A8923EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCodeTextField_Wrappable.swift; sourceTree = "<group>"; };
 		8F3B1A8B23EAABC900B8506D /* SchoolCodeTextField_Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCodeTextField_Rep.swift; sourceTree = "<group>"; };
 		8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldUnderlineView.swift; sourceTree = "<group>"; };
+		8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA5C67F6FE91C0A2E9D63723 /* Pods-WorkYourBrain008.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkYourBrain008.release.xcconfig"; path = "Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008.release.xcconfig"; sourceTree = "<group>"; };
+		CCAF9D681E39FCB33BB9C4EE /* Pods-WorkYourBrain008.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkYourBrain008.debug.xcconfig"; path = "Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +69,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914311AB886D79C69E053EA3 /* Pods_WorkYourBrain008.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0261851358913246959362D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCAF9D681E39FCB33BB9C4EE /* Pods-WorkYourBrain008.debug.xcconfig */,
+				CA5C67F6FE91C0A2E9D63723 /* Pods-WorkYourBrain008.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7A5205A87A05A130C949D3A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F3B1A4323EA971700B8506D = {
 			isa = PBXGroup;
 			children = (
 				8F3B1A4E23EA971700B8506D /* WorkYourBrain008 */,
 				8F3B1A4D23EA971700B8506D /* Products */,
+				0261851358913246959362D9 /* Pods */,
+				7A5205A87A05A130C949D3A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +115,7 @@
 		8F3B1A4E23EA971700B8506D /* WorkYourBrain008 */ = {
 			isa = PBXGroup;
 			children = (
+				8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */,
 				8F3B1A7E23EAAAC600B8506D /* TextField_Modifications */,
 				8F3B1A6523EA9D9E00B8506D /* LandingPage_Handlers */,
 				8F3B1A7B23EAA23800B8506D /* SignInViews */,
@@ -170,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F3B1A6023EA971800B8506D /* Build configuration list for PBXNativeTarget "WorkYourBrain008" */;
 			buildPhases = (
+				AA4D5F800076F19883A245D2 /* [CP] Check Pods Manifest.lock */,
 				8F3B1A4823EA971700B8506D /* Sources */,
 				8F3B1A4923EA971700B8506D /* Frameworks */,
 				8F3B1A4A23EA971700B8506D /* Resources */,
+				1A5A4CAE2A2451218BE2DB9B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,10 +254,53 @@
 				8F3B1A5C23EA971800B8506D /* LaunchScreen.storyboard in Resources */,
 				8F3B1A5923EA971800B8506D /* Preview Assets.xcassets in Resources */,
 				8F3B1A5623EA971800B8506D /* Assets.xcassets in Resources */,
+				8F3D0CD223F877200019AF69 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A5A4CAE2A2451218BE2DB9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA4D5F800076F19883A245D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkYourBrain008-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F3B1A4823EA971700B8506D /* Sources */ = {
@@ -386,6 +459,7 @@
 		};
 		8F3B1A6123EA971800B8506D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCAF9D681E39FCB33BB9C4EE /* Pods-WorkYourBrain008.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +480,7 @@
 		};
 		8F3B1A6223EA971800B8506D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA5C67F6FE91C0A2E9D63723 /* Pods-WorkYourBrain008.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

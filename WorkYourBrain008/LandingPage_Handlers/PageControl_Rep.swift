@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
-struct PageControl: UIViewRepresentable {
+struct PageControl_Rep: UIViewRepresentable {
     var numberOfPages: Int
     @Binding var currentPageIndex: Int
     
