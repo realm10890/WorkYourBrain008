@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1B10AC240234CC00EB051B /* EmailSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B10AB240234CC00EB051B /* EmailSetter.swift */; };
+		8F1B10AE24024FCC00EB051B /* checkForVerify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B10AD24024FCC00EB051B /* checkForVerify.swift */; };
+		8F1B10B02402639E00EB051B /* functionfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1B10AF2402639E00EB051B /* functionfile.swift */; };
 		8F3B1A5023EA971700B8506D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A4F23EA971700B8506D /* AppDelegate.swift */; };
 		8F3B1A5223EA971700B8506D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A5123EA971700B8506D /* SceneDelegate.swift */; };
 		8F3B1A5423EA971700B8506D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A5323EA971700B8506D /* ContentView.swift */; };
@@ -30,11 +33,15 @@
 		8F3B1A8C23EAABC900B8506D /* SchoolCodeTextField_Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8B23EAABC900B8506D /* SchoolCodeTextField_Rep.swift */; };
 		8F3B1A8E23EAAC0700B8506D /* TextFieldUnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */; };
 		8F3D0CD223F877200019AF69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */; };
+		8F7C1B2A23F8BBC60061A957 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C1B2923F8BBC60061A957 /* SessionStore.swift */; };
 		914311AB886D79C69E053EA3 /* Pods_WorkYourBrain008.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkYourBrain008.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F1B10AB240234CC00EB051B /* EmailSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSetter.swift; sourceTree = "<group>"; };
+		8F1B10AD24024FCC00EB051B /* checkForVerify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkForVerify.swift; sourceTree = "<group>"; };
+		8F1B10AF2402639E00EB051B /* functionfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionfile.swift; sourceTree = "<group>"; };
 		8F3B1A4C23EA971700B8506D /* WorkYourBrain008.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkYourBrain008.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3B1A4F23EA971700B8506D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F3B1A5123EA971700B8506D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +67,7 @@
 		8F3B1A8B23EAABC900B8506D /* SchoolCodeTextField_Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCodeTextField_Rep.swift; sourceTree = "<group>"; };
 		8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldUnderlineView.swift; sourceTree = "<group>"; };
 		8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F7C1B2923F8BBC60061A957 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		CA5C67F6FE91C0A2E9D63723 /* Pods-WorkYourBrain008.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkYourBrain008.release.xcconfig"; path = "Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008.release.xcconfig"; sourceTree = "<group>"; };
 		CCAF9D681E39FCB33BB9C4EE /* Pods-WorkYourBrain008.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkYourBrain008.debug.xcconfig"; path = "Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +90,6 @@
 				CCAF9D681E39FCB33BB9C4EE /* Pods-WorkYourBrain008.debug.xcconfig */,
 				CA5C67F6FE91C0A2E9D63723 /* Pods-WorkYourBrain008.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -92,6 +99,15 @@
 				19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F1B10AA240234B000EB051B /* _DataRouter */ = {
+			isa = PBXGroup;
+			children = (
+				8F1B10AB240234CC00EB051B /* EmailSetter.swift */,
+				8F1B10AD24024FCC00EB051B /* checkForVerify.swift */,
+			);
+			path = _DataRouter;
 			sourceTree = "<group>";
 		};
 		8F3B1A4323EA971700B8506D = {
@@ -115,6 +131,8 @@
 		8F3B1A4E23EA971700B8506D /* WorkYourBrain008 */ = {
 			isa = PBXGroup;
 			children = (
+				8F1B10AA240234B000EB051B /* _DataRouter */,
+				8F7C1B2823F8A4720061A957 /* Firebase */,
 				8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */,
 				8F3B1A7E23EAAAC600B8506D /* TextField_Modifications */,
 				8F3B1A6523EA9D9E00B8506D /* LandingPage_Handlers */,
@@ -128,6 +146,7 @@
 				8F3B1A5A23EA971800B8506D /* LaunchScreen.storyboard */,
 				8F3B1A5D23EA971800B8506D /* Info.plist */,
 				8F3B1A5723EA971800B8506D /* Preview Content */,
+				8F1B10AF2402639E00EB051B /* functionfile.swift */,
 			);
 			path = WorkYourBrain008;
 			sourceTree = "<group>";
@@ -189,6 +208,14 @@
 				8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */,
 			);
 			path = TextField_Modifications;
+			sourceTree = "<group>";
+		};
+		8F7C1B2823F8A4720061A957 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C1B2923F8BBC60061A957 /* SessionStore.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,17 +338,21 @@
 				8F3B1A5023EA971700B8506D /* AppDelegate.swift in Sources */,
 				8F3B1A6F23EA9FF500B8506D /* OnBoardingView_Subviews.swift in Sources */,
 				8F3B1A8423EAAB5B00B8506D /* EmailTextField_Rep.swift in Sources */,
+				8F1B10AC240234CC00EB051B /* EmailSetter.swift in Sources */,
 				8F3B1A8E23EAAC0700B8506D /* TextFieldUnderlineView.swift in Sources */,
 				8F3B1A8623EAAB7900B8506D /* PasswordTextField_Wrappable.swift in Sources */,
+				8F7C1B2A23F8BBC60061A957 /* SessionStore.swift in Sources */,
 				8F3B1A7423EAA18D00B8506D /* SchoolCode_SignUp.swift in Sources */,
 				8F3B1A6723EA9DCD00B8506D /* PageViewController_Rep.swift in Sources */,
 				8F3B1A5223EA971700B8506D /* SceneDelegate.swift in Sources */,
 				8F3B1A7623EAA1A100B8506D /* Email_SignUp.swift in Sources */,
 				8F3B1A8A23EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift in Sources */,
+				8F1B10B02402639E00EB051B /* functionfile.swift in Sources */,
 				8F3B1A8823EAAB8700B8506D /* PasswordTextField_Rep.swift in Sources */,
 				8F3B1A6D23EA9E9C00B8506D /* OnBoardingView.swift in Sources */,
 				8F3B1A6923EA9E2E00B8506D /* PageControl_Rep.swift in Sources */,
 				8F3B1A7A23EAA1BD00B8506D /* Username_SignUp.swift in Sources */,
+				8F1B10AE24024FCC00EB051B /* checkForVerify.swift in Sources */,
 				8F3B1A8223EAAB3E00B8506D /* EmailTextField_Wrappable.swift in Sources */,
 				8F3B1A7823EAA1AF00B8506D /* Password_SignUp.swift in Sources */,
 				8F3B1A5423EA971700B8506D /* ContentView.swift in Sources */,

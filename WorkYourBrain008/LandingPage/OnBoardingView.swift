@@ -8,6 +8,7 @@
 
 import SwiftUI
 import UIKit
+import Firebase
 
 struct OnBoardingView: View {
     //@ObservedObject var navToSignIn: NavToSignIn
@@ -27,26 +28,16 @@ struct OnBoardingView: View {
         UIHostingController(rootView: OnBoardingView_Subviews(imageString: "")),
         UIHostingController(rootView: OnBoardingView_Subviews(imageString: ""))
                 ]
-   // var emailHandlingViews = [EmailVerificationHandle(), ]
     var titles = ["Have a question? Ask it.", "Conquer personal hindrances", "Create a peaceful mind"]
     var captions =  ["Post your question and work with your peers to find a solution.", "Meditating helps you dealing with anxiety and other psychic problems", "Regular medidation sessions creates a peaceful inner mind"]
     
     var buttonText = ["Next", "Next", "Get Started"]
     @State var currentPageIndex = 0
-    /*
-    func settingFinalState() -> Bool{
-        var finalDes = false
-        if self.activity.isActive == true{
-            finalDes = true
-            
-        }else if self.activity.isActive == false{
-            finalDes = false
-        }
-        return finalDes
-    }
- */
+
     @State var isActive: Bool = false
     
+    @EnvironmentObject var emailGetter: emailSetter
+     @EnvironmentObject var verify: verificationChecker
     var body: some View {
     NavigationView{
 VStack(alignment: .leading) {
@@ -73,6 +64,16 @@ VStack(alignment: .leading) {
             PageControl_Rep(numberOfPages: subViews.count, currentPageIndex: $currentPageIndex)
             Spacer()
             if currentPageIndex == 0{
+                Button(action:{
+                    //sign out
+                    do {
+                        try Auth.auth().signOut()
+                    } catch let signOutError as NSError {
+                      print ("Error signing out: %@", signOutError)
+                    }
+                }){
+                    Text("Sign Out")
+                }
                 Button(action:{
                     print("Go To Next Slide View")
                     if self.currentPageIndex+1 == self.subViews.count {
@@ -108,7 +109,7 @@ VStack(alignment: .leading) {
                    }
             }else if currentPageIndex == 2 {
                 
-                NavigationLink(destination: SchoolCode_SignUp(/*viewRouter: ViewRouter(), dataRouter: DataRouter(),navToSignIn: NavToSignIn(),*/ rootIsActive: self.$isActive), isActive: self.$isActive
+                NavigationLink(destination: SchoolCode_SignUp(/*viewRouter: ViewRouter(), dataRouter: DataRouter(),navToSignIn: NavToSignIn(),*/ rootIsActive: self.$isActive).environmentObject(verify), isActive: self.$isActive
                     ){
                         Text("Get Started")
                         .font(.system(size: 12))

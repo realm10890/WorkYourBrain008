@@ -7,23 +7,32 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Email_SignUp: View {
+    
+    
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    @State var linePaddingLeading = false
+    @State private var linePaddingLeading = false
     @State private var email = ""
-    @State var nextButtonOpacity = false
-    @State var showingAlert = false
+    @State private var nextButtonOpacity = false
+    @State private var nextButtonDisabled = true
+    @State private var showingAlert = false
     @State private var existingUser_alert = false
+    @State private var goToPassword = false
     let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue: 247.0/255.0, opacity: 1.0)
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    @EnvironmentObject var emailGetter: emailSetter
+    //var verify = verificationChecker()
+    @EnvironmentObject var verify: verificationChecker
     
     var body: some View {
+       // NavigationView{
         ZStack{
             VStack{
                 HStack{
@@ -45,13 +54,19 @@ struct Email_SignUp: View {
                     Spacer()
                 }
                 VStack{
+                   // TextField("Email", text: $emailGetter.email)
                     EmailTextField_Rep(tag: 0, placeholder: "Email", changeHandler: {(newString) in
                         if(self.isValidEmail(self.email) == true){
                             withAnimation(){
-                           // self.buttonDisabled.toggle()
-                            self.nextButtonOpacity.toggle()
+                                self.nextButtonOpacity = true
+                                self.nextButtonDisabled = false
                             }
-                        }else if(self.isValidEmail(self.email) != true){}
+                        }else if(self.isValidEmail(self.email) != true){
+                            withAnimation(){
+                                self.nextButtonOpacity = false
+                                self.nextButtonDisabled = true
+                            }
+                        }
                         self.email = newString
                     }, onCommitHandler: {
                         }).disableAutocorrection(true)
@@ -68,15 +83,19 @@ struct Email_SignUp: View {
                     TextFieldUnderlineView(color: blueAccents)
                         .frame(width: linePaddingLeading ? self.screenWidth - 35 : 0, height: 10)
                     Button(action:{
-                        //extended UIApplication Function
-                        withAnimation(){
-                       self.showingAlert = true
-                        self.existingUser_alert = true
-                        }
-                        if(self.linePaddingLeading == true){
-                            self.linePaddingLeading.toggle()
-                        }else{}
-                        
+                       // self.emailGetter.email = self.email
+                        Auth.auth().fetchSignInMethods(forEmail: self.email, completion: {
+                            (providers, error) in
+                            if providers != nil{
+                                print("Email Already Exists")
+                                withAnimation(){
+                                    
+                                }
+                            } else {
+                                self.goToPassword = true
+                                self.emailGetter.email = self.email
+                            }
+                        })
                     }){
                         Text("Next")
                             .font(.system(size: 15))
@@ -87,7 +106,7 @@ struct Email_SignUp: View {
                             .opacity(nextButtonOpacity ? 1.0 : 0.5)
                             .cornerRadius(10)
                             .padding(.bottom)
-                    }
+                    }.disabled(self.nextButtonDisabled)
                     Button(action:{
                         print("Already Have An Account")
                     }){
@@ -133,14 +152,33 @@ struct Email_SignUp: View {
                     }
                 }
             }
+        
         .frame(width: 300, height: 300)
         .background(Color.white)
         .cornerRadius(20).shadow(radius: 20)
-                .position(x: self.screenWidth / 2, y: existingUser_alert ? self.screenHeight / 3 : self.screenHeight + 112.5)
-        }.onAppear(){
+                .position(x: self.screenWidth / 2, y: existingUser_alert ?
+                    self.screenHeight / 3 : self.screenHeight + 112.5)
+            
+            NavigationLink(destination: Password_SignUp().environmentObject(verify), isActive: $goToPassword){
+                EmptyView()
+            }
+ 
+
+            
+        }
+        //}//nav
+            
+        .onAppear(){
             withAnimation(Animation.easeInOut.delay(0.3)){
-                       self.linePaddingLeading.toggle()
+                       self.linePaddingLeading = true
                        }
+        }
+            
+            
+        .onDisappear(){
+            withAnimation(Animation.easeInOut.delay(0.3)){
+                self.linePaddingLeading = false
+            }
         }
     }
 }

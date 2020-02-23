@@ -38,25 +38,17 @@ struct SchoolCode_SignUp: View {
     let lineWidth:CGFloat = 45
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
-    @State var email:String = ""
+    //@State var email:String = ""
     @State var str: String = ""
     @State var linePaddingTrailing = true
     @State var linePaddingLeading = false
     let blueAccents = Color(red: 52.0/255.0, green: 120.0/255.0, blue:
     247.0/255.0, opacity: 1.0)
     @State var isNavigationBarHidden: Bool = true
-    /*
-    @ObservedObject var viewRouter: ViewRouter
-    @ObservedObject var dataRouter: DataRouter
-    @ObservedObject var navToSignIn: NavToSignIn
- */
     let appearance = UINavigationBarAppearance()
     @State private var navToggle = false
-    
-    
-   // @EnvironmentObject var user_Data: DataRouter2
-
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+   
     
     var btnBack: some View {
         Button(action:{
@@ -72,16 +64,21 @@ struct SchoolCode_SignUp: View {
     }
     @Binding var rootIsActive: Bool
     
+     @EnvironmentObject var emailGetter: emailSetter
+    @EnvironmentObject var verify: verificationChecker
+    
     var body: some View {
         
        // NavigationView{
         VStack{
             HStack{
                 VStack(alignment: .leading, spacing: 2){
-                    NavigationLink(destination: Email_SignUp(), isActive: $navToggle){
+                    
+                    NavigationLink(destination: Email_SignUp().environmentObject(verify), isActive: $navToggle){
                         EmptyView()
                     }
                     .hidden()
+ 
                     
                     Text("Enter Your")
                     .font(.system(size: 35))
