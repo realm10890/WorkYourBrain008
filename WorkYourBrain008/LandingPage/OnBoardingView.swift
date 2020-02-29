@@ -64,16 +64,7 @@ VStack(alignment: .leading) {
             PageControl_Rep(numberOfPages: subViews.count, currentPageIndex: $currentPageIndex)
             Spacer()
             if currentPageIndex == 0{
-                Button(action:{
-                    //sign out
-                    do {
-                        try Auth.auth().signOut()
-                    } catch let signOutError as NSError {
-                      print ("Error signing out: %@", signOutError)
-                    }
-                }){
-                    Text("Sign Out")
-                }
+               
                 Button(action:{
                     print("Go To Next Slide View")
                     if self.currentPageIndex+1 == self.subViews.count {
@@ -84,6 +75,7 @@ VStack(alignment: .leading) {
                 }){
                     Text("Next")
                     .font(.system(size: 12))
+                        //12
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                     .frame(width: 150 , height: 45)
@@ -116,6 +108,7 @@ VStack(alignment: .leading) {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .frame(width: 150 , height: 45)
+                            //150 45
                         .background(blueAccents)
                         .cornerRadius(10)
                 }

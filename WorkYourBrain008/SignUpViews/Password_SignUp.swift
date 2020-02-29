@@ -20,6 +20,7 @@ struct Password_SignUp: View {
     @State private var linePaddingLeading = false
     @State private var NextButtonOp = false
     @State private var showingAlert = false
+    @State private var showingAlert2 = false
     @EnvironmentObject var emailGetter: emailSetter
     @EnvironmentObject var verificationGet: verificationChecker
     func change() {
@@ -73,6 +74,7 @@ struct Password_SignUp: View {
                     TextFieldUnderlineView(color: blueAccents)
                         .frame(width: linePaddingLeading ? self.screenWidth - 35 : 0, height: 10)
                     Button(action:{
+                        UIApplication.shared.endEditing_2()
                         
                         
                         if(self.createdAccount == false){
@@ -87,7 +89,7 @@ struct Password_SignUp: View {
                             }else if (!Auth.auth().currentUser!.isEmailVerified){
                                 Auth.auth().currentUser!.sendEmailVerification{ (error) in
                                     if error != nil{
-                                        print(error?.localizedDescription)
+                                        //print(error?.localizedDescription)
                                         print("Error sending verification email")
                                         return
                                     }
@@ -111,11 +113,12 @@ struct Password_SignUp: View {
                             }else if (!Auth.auth().currentUser!.isEmailVerified){
                                 Auth.auth().currentUser!.sendEmailVerification{ (error) in
                                     if error != nil{
+                                        //print(error?.localizedDescription)
                                         print("Error sending verification email")
                                         return
                                     }
                                     withAnimation(){
-                                    self.showingAlert = true
+                                    self.showingAlert2 = true
                                     }
                                 }
                                 
@@ -164,7 +167,7 @@ struct Password_SignUp: View {
             Image(systemName: "envelope")
                 .resizable()
                 .frame(width: 25, height: 20)
-            Text("We have sent you an email, when done come back here!")
+            Text("We have sent you an email, when done come back here and hit next again!")
                 .font(.system(size: 15))
                 .fontWeight(.medium)
                 .background(Color.white)
@@ -188,6 +191,55 @@ struct Password_SignUp: View {
             .background(Color.white)
             .cornerRadius(20).shadow(radius: 20)
             .position(x: self.screenWidth / 2, y: showingAlert ? self.screenHeight / 3 : self.screenHeight + 112.5)
+            .multilineTextAlignment(.center)
+            
+            //have not verified
+            VStack(spacing: 20){
+            Text("Verify Your Email")
+                .font(.system(size: 20))
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.center)
+                .background(Color.white)
+                .foregroundColor(Color.black)
+            Image(systemName: "envelope")
+                .resizable()
+                .frame(width: 25, height: 20)
+            Text("It looks like you have not verified your email yet, go verify it or send the email again!")
+                .font(.system(size: 15))
+                .fontWeight(.medium)
+                .background(Color.white)
+                .foregroundColor(Color.black)
+                .multilineTextAlignment(.center)
+            HStack(){
+                Button(action:{
+                    print("Ok pressed")
+                    withAnimation(){
+                    self.showingAlert2 = false
+                    }
+                }){
+                Text("Ok")
+                    .font(.system(size: 15))
+                    .fontWeight(.semibold)
+                    .background(Color.white)
+                    .foregroundColor(blueAccents)
+                    }
+                Button(action:{
+                    print("Resend Email Pressed")
+                    print("Resign this alert")
+                    
+                }){
+                   Text("Resend Email")
+                    .font(.system(size: 15))
+                    .fontWeight(.semibold)
+                    .background(Color.white)
+                    .foregroundColor(blueAccents)
+                    }
+                }
+            }
+            .frame(width: 300, height: 225)
+            .background(Color.white)
+            .cornerRadius(20).shadow(radius: 20)
+            .position(x: self.screenWidth / 2, y: showingAlert2 ? self.screenHeight / 3 : self.screenHeight + 112.5)
             .multilineTextAlignment(.center)
 
         }.onAppear(){

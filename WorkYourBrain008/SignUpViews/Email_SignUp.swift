@@ -83,13 +83,15 @@ struct Email_SignUp: View {
                     TextFieldUnderlineView(color: blueAccents)
                         .frame(width: linePaddingLeading ? self.screenWidth - 35 : 0, height: 10)
                     Button(action:{
+                         UIApplication.shared.endEditing()
                        // self.emailGetter.email = self.email
                         Auth.auth().fetchSignInMethods(forEmail: self.email, completion: {
                             (providers, error) in
                             if providers != nil{
                                 print("Email Already Exists")
+                                
                                 withAnimation(){
-                                    
+                                    self.existingUser_alert = true
                                 }
                             } else {
                                 self.goToPassword = true
@@ -127,7 +129,7 @@ struct Email_SignUp: View {
                     .multilineTextAlignment(.center)
                     .background(Color.white)
                     .foregroundColor(Color.black)
-                Text("It looks like you already have an account with this email")
+                Text("It looks like you already have an account with this email. Use a different email or try signing in.")
                     .font(.system(size: 15))
                     .fontWeight(.medium)
                     .background(Color.white)
@@ -152,29 +154,21 @@ struct Email_SignUp: View {
                     }
                 }
             }
-        
         .frame(width: 300, height: 300)
         .background(Color.white)
         .cornerRadius(20).shadow(radius: 20)
-                .position(x: self.screenWidth / 2, y: existingUser_alert ?
+        .position(x: self.screenWidth / 2, y: existingUser_alert ?
                     self.screenHeight / 3 : self.screenHeight + 112.5)
             
             NavigationLink(destination: Password_SignUp().environmentObject(verify), isActive: $goToPassword){
                 EmptyView()
-            }
- 
-
-            
+            }.hidden()
         }
-        //}//nav
-            
         .onAppear(){
             withAnimation(Animation.easeInOut.delay(0.3)){
                        self.linePaddingLeading = true
                        }
         }
-            
-            
         .onDisappear(){
             withAnimation(Animation.easeInOut.delay(0.3)){
                 self.linePaddingLeading = false
@@ -182,7 +176,6 @@ struct Email_SignUp: View {
         }
     }
 }
-
 extension UIApplication {
     func endEditing() {
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

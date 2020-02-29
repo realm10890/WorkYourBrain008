@@ -32,8 +32,13 @@
 		8F3B1A8A23EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8923EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift */; };
 		8F3B1A8C23EAABC900B8506D /* SchoolCodeTextField_Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8B23EAABC900B8506D /* SchoolCodeTextField_Rep.swift */; };
 		8F3B1A8E23EAAC0700B8506D /* TextFieldUnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */; };
+		8F3D0A1F24031AAD0043763C /* HighestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0A1E24031AAD0043763C /* HighestView.swift */; };
+		8F3D0A22240325480043763C /* checkIfSigningIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0A21240325480043763C /* checkIfSigningIn.swift */; };
 		8F3D0CD223F877200019AF69 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */; };
+		8F57787E24030BA90083A435 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F57787D24030BA90083A435 /* HomeView.swift */; };
+		8F69583B2408534C008AC4A8 /* Password_SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69583A2408534C008AC4A8 /* Password_SignIn.swift */; };
 		8F7C1B2A23F8BBC60061A957 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C1B2923F8BBC60061A957 /* SessionStore.swift */; };
+		8F99FF772409AD7200F162E4 /* SignInEmail_Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F99FF762409AD7200F162E4 /* SignInEmail_Router.swift */; };
 		914311AB886D79C69E053EA3 /* Pods_WorkYourBrain008.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19222911857A441E3ED0A7F4 /* Pods_WorkYourBrain008.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +71,13 @@
 		8F3B1A8923EAABB700B8506D /* SchoolCodeTextField_Wrappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCodeTextField_Wrappable.swift; sourceTree = "<group>"; };
 		8F3B1A8B23EAABC900B8506D /* SchoolCodeTextField_Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCodeTextField_Rep.swift; sourceTree = "<group>"; };
 		8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldUnderlineView.swift; sourceTree = "<group>"; };
+		8F3D0A1E24031AAD0043763C /* HighestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighestView.swift; sourceTree = "<group>"; };
+		8F3D0A21240325480043763C /* checkIfSigningIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkIfSigningIn.swift; sourceTree = "<group>"; };
 		8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F57787D24030BA90083A435 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8F69583A2408534C008AC4A8 /* Password_SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password_SignIn.swift; sourceTree = "<group>"; };
 		8F7C1B2923F8BBC60061A957 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		8F99FF762409AD7200F162E4 /* SignInEmail_Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmail_Router.swift; sourceTree = "<group>"; };
 		CA5C67F6FE91C0A2E9D63723 /* Pods-WorkYourBrain008.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkYourBrain008.release.xcconfig"; path = "Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008.release.xcconfig"; sourceTree = "<group>"; };
 		CCAF9D681E39FCB33BB9C4EE /* Pods-WorkYourBrain008.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkYourBrain008.debug.xcconfig"; path = "Target Support Files/Pods-WorkYourBrain008/Pods-WorkYourBrain008.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +116,8 @@
 			children = (
 				8F1B10AB240234CC00EB051B /* EmailSetter.swift */,
 				8F1B10AD24024FCC00EB051B /* checkForVerify.swift */,
+				8F3D0A21240325480043763C /* checkIfSigningIn.swift */,
+				8F99FF762409AD7200F162E4 /* SignInEmail_Router.swift */,
 			);
 			path = _DataRouter;
 			sourceTree = "<group>";
@@ -131,6 +143,7 @@
 		8F3B1A4E23EA971700B8506D /* WorkYourBrain008 */ = {
 			isa = PBXGroup;
 			children = (
+				8F57787C24030B900083A435 /* MainViews */,
 				8F1B10AA240234B000EB051B /* _DataRouter */,
 				8F7C1B2823F8A4720061A957 /* Firebase */,
 				8F3D0CD123F877200019AF69 /* GoogleService-Info.plist */,
@@ -147,6 +160,7 @@
 				8F3B1A5D23EA971800B8506D /* Info.plist */,
 				8F3B1A5723EA971800B8506D /* Preview Content */,
 				8F1B10AF2402639E00EB051B /* functionfile.swift */,
+				8F3D0A1E24031AAD0043763C /* HighestView.swift */,
 			);
 			path = WorkYourBrain008;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				8F3B1A7C23EAA25100B8506D /* Email_SignIn.swift */,
+				8F69583A2408534C008AC4A8 /* Password_SignIn.swift */,
 			);
 			path = SignInViews;
 			sourceTree = "<group>";
@@ -208,6 +223,14 @@
 				8F3B1A8D23EAAC0700B8506D /* TextFieldUnderlineView.swift */,
 			);
 			path = TextField_Modifications;
+			sourceTree = "<group>";
+		};
+		8F57787C24030B900083A435 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				8F57787D24030BA90083A435 /* HomeView.swift */,
+			);
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 		8F7C1B2823F8A4720061A957 /* Firebase */ = {
@@ -355,8 +378,13 @@
 				8F1B10AE24024FCC00EB051B /* checkForVerify.swift in Sources */,
 				8F3B1A8223EAAB3E00B8506D /* EmailTextField_Wrappable.swift in Sources */,
 				8F3B1A7823EAA1AF00B8506D /* Password_SignUp.swift in Sources */,
+				8F57787E24030BA90083A435 /* HomeView.swift in Sources */,
 				8F3B1A5423EA971700B8506D /* ContentView.swift in Sources */,
+				8F3D0A1F24031AAD0043763C /* HighestView.swift in Sources */,
+				8F69583B2408534C008AC4A8 /* Password_SignIn.swift in Sources */,
+				8F3D0A22240325480043763C /* checkIfSigningIn.swift in Sources */,
 				8F3B1A7D23EAA25100B8506D /* Email_SignIn.swift in Sources */,
+				8F99FF772409AD7200F162E4 /* SignInEmail_Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

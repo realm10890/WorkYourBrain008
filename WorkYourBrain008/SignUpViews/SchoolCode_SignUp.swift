@@ -48,7 +48,7 @@ struct SchoolCode_SignUp: View {
     let appearance = UINavigationBarAppearance()
     @State private var navToggle = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-   
+    @EnvironmentObject var signingIn2: signingInChecker
     
     var btnBack: some View {
         Button(action:{
@@ -196,6 +196,11 @@ struct SchoolCode_SignUp: View {
 
                         }
                 .offset(x: 0, y: 125)
+                    .onAppear(){
+                        self.signingIn2.signingIn = true
+                        print("Toggled signing in to true")
+                    }
+                    
                 }.onDisappear(){
                  self.navToggle.toggle()
                  print("navtoggle = false")

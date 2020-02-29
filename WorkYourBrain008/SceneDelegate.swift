@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var emailGetter = emailSetter()
     var verify = verificationChecker()
+    var signInEmailGetter = signInEmailSetter()
     //create an observable that is accessible on this file and send a bool to a object read ro, passwod view
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -23,12 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = OnBoardingView()
+        let contentView = HighestView()//OnBoardingView()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(emailGetter).environmentObject(verify))
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(emailGetter).environmentObject(verify).environmentObject(SessionStore()).environmentObject(signingInChecker()).environmentObject(signInEmailGetter))
             self.window = window
             window.makeKeyAndVisible()
         }
